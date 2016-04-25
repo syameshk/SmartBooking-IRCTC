@@ -1,115 +1,507 @@
 {
+    "train": {
+        "number": "12601",
+        "classes": [
+            {
+                "class-code": "1A",
+                "available": "N"
+            },
+            {
+                "class-code": "CC",
+                "available": "N"
+            },
+            {
+                "class-code": "2S",
+                "available": "N"
+            },
+            {
+                "class-code": "3E",
+                "available": "N"
+            },
+            {
+                "class-code": "SL",
+                "available": "Y"
+            },
+            {
+                "class-code": "FC",
+                "available": "N"
+            },
+            {
+                "class-code": "2A",
+                "available": "Y"
+            },
+            {
+                "class-code": "3A",
+                "available": "Y"
+            }
+        ],
+        "name": "MANGALORE MAIL",
+        "days": [
+            {
+                "runs": "Y",
+                "day-code": "SUN"
+            },
+            {
+                "runs": "Y",
+                "day-code": "MON"
+            },
+            {
+                "runs": "Y",
+                "day-code": "TUE"
+            },
+            {
+                "runs": "Y",
+                "day-code": "WED"
+            },
+            {
+                "runs": "Y",
+                "day-code": "THU"
+            },
+            {
+                "runs": "Y",
+                "day-code": "FRI"
+            },
+            {
+                "runs": "Y",
+                "day-code": "SAT"
+            }
+        ]
+    },
     "response_code": 200,
     "route": [
         {
+            "route": 1,
+            "halt": 0,
+            "code": "MAS",
             "no": 1,
             "distance": 0,
-            "day": 1,
-            "halt": 0,
-            "route": 1,
-            "code": "CDG",
-            "fullname": "CHANDIGARH",
-            "lat": 30.7333148,
-            "lng": 76.7794179,
-            "state": "Chandigarh",
+            "state": "Tamil Nadu 600003",
             "scharr": "Source",
-            "schdep": "12:00"
+            "day": 1,
+            "lat": 13.0820617,
+            "fullname": "CHENNAI CENTRAL",
+            "schdep": "20:20",
+            "lng": 80.2755868
         },
         {
+            "route": 1,
+            "halt": 1,
+            "code": "TRL",
             "no": 2,
-            "distance": 68,
+            "distance": 42,
+            "state": "Tamil Nadu 602003",
+            "scharr": "20:54",
             "day": 1,
-            "halt": 2,
-            "route": 1,
-            "code": "UMB",
-            "fullname": "AMBALA CANT JN",
-            "lat": 30.3781788,
-            "lng": 76.7766974,
-            "state": "Haryana",
-            "schdep": "12:42",
-            "scharr": "12:40"
+            "lat": 13.1162544,
+            "fullname": "TIRUVALLUR",
+            "schdep": "20:55",
+            "lng": 79.91349819999999
         },
         {
-            "no": 3,
-            "distance": 266,
-            "day": 1,
-            "halt": 0,
             "route": 1,
-            "code": "NDLS",
-            "fullname": "NEW DELHI",
-            "lat": 28.6139,
-            "lng": 77.2089,
-            "state": "Delhi",
+            "halt": 2,
+            "code": "AJJ",
+            "no": 3,
+            "distance": 69,
+            "state": "Tamil Nadu 631001",
+            "scharr": "21:18",
+            "day": 1,
+            "lat": 13.0817771,
+            "fullname": "ARAKKONAM",
+            "schdep": "21:20",
+            "lng": 79.668103
+        },
+        {
+            "route": 1,
+            "halt": 1,
+            "code": "WJR",
+            "no": 4,
+            "distance": 105,
+            "state": "Tamil Nadu 632513",
+            "scharr": "21:49",
+            "day": 1,
+            "lat": 12.9353849,
+            "fullname": "WALAJAH ROAD JN",
+            "schdep": "21:50",
+            "lng": 79.363243
+        },
+        {
+            "route": 1,
+            "halt": 2,
+            "code": "KPD",
+            "no": 5,
+            "distance": 130,
+            "state": "Tamil Nadu 632007",
+            "scharr": "22:13",
+            "day": 1,
+            "lat": 12.9722421,
+            "fullname": "KATPADI JN",
+            "schdep": "22:15",
+            "lng": 79.1384152
+        },
+        {
+            "route": 1,
+            "halt": 2,
+            "code": "JTJ",
+            "no": 6,
+            "distance": 214,
+            "state": "Tamil Nadu 635853",
+            "scharr": "23:23",
+            "day": 1,
+            "lat": 12.535255,
+            "fullname": "JOLARPETTAI",
+            "schdep": "23:25",
+            "lng": 78.568125
+        },
+        {
+            "route": 1,
+            "halt": 5,
+            "code": "SA",
+            "no": 7,
+            "distance": 334,
+            "state": "Tamil Nadu 636005",
+            "scharr": "00:50",
+            "day": 2,
+            "lat": 11.6702698,
+            "fullname": "SALEM JN",
+            "schdep": "00:55",
+            "lng": 78.113323
+        },
+        {
+            "route": 1,
+            "halt": 5,
+            "code": "ED",
+            "no": 8,
+            "distance": 396,
+            "state": "Tamil Nadu 638002",
+            "scharr": "01:50",
+            "day": 2,
+            "lat": 11.3279279,
+            "fullname": "ERODE JN",
+            "schdep": "01:55",
+            "lng": 77.7260302
+        },
+        {
+            "route": 1,
+            "halt": 2,
+            "code": "TUP",
+            "no": 9,
+            "distance": 446,
+            "state": "Tamil Nadu 641601",
+            "scharr": "02:38",
+            "day": 2,
+            "lat": 11.1085459,
+            "fullname": "TIRUPPUR",
+            "schdep": "02:40",
+            "lng": 77.3399802
+        },
+        {
+            "route": 1,
+            "halt": 1,
+            "code": "PTJ",
+            "no": 10,
+            "distance": 490,
+            "state": "Tamil Nadu 641111",
+            "scharr": "03:29",
+            "day": 2,
+            "lat": 10.964917,
+            "fullname": "PODANUR JN",
+            "schdep": "03:30",
+            "lng": 76.98968760000001
+        },
+        {
+            "route": 1,
+            "halt": 5,
+            "code": "PGT",
+            "no": 11,
+            "distance": 538,
+            "state": "Kerala 678002",
+            "scharr": "04:40",
+            "day": 2,
+            "lat": 10.799284,
+            "fullname": "PALAKKAD",
+            "schdep": "04:45",
+            "lng": 76.63753729999999
+        },
+        {
+            "route": 1,
+            "halt": 2,
+            "code": "OTP",
+            "no": 12,
+            "distance": 570,
+            "state": "Kerala 679101",
+            "scharr": "05:08",
+            "day": 2,
+            "lat": 10.7696996,
+            "fullname": "OTTAPPALAM",
+            "schdep": "05:10",
+            "lng": 76.3776558
+        },
+        {
+            "route": 1,
+            "halt": 10,
+            "code": "SRR",
+            "no": 13,
+            "distance": 583,
+            "state": "Kerala 679121",
+            "scharr": "06:00",
+            "day": 2,
+            "lat": 10.7592773,
+            "fullname": "SHORANUR JN",
+            "schdep": "06:10",
+            "lng": 76.2714453
+        },
+        {
+            "route": 1,
+            "halt": 1,
+            "code": "PTB",
+            "no": 14,
+            "distance": 594,
+            "state": "Kerala 679303",
+            "scharr": "06:24",
+            "day": 2,
+            "lat": 10.8019549,
+            "fullname": "PATTAMBI",
+            "schdep": "06:25",
+            "lng": 76.1815437
+        },
+        {
+            "route": 1,
+            "halt": 2,
+            "code": "KTU",
+            "no": 15,
+            "distance": 613,
+            "state": "Kerala 679571",
+            "scharr": "06:43",
+            "day": 2,
+            "lat": 10.8456335,
+            "fullname": "KUTTIPPURAM",
+            "schdep": "06:45",
+            "lng": 76.033641
+        },
+        {
+            "route": 1,
+            "halt": 2,
+            "code": "TIR",
+            "no": 16,
+            "distance": 628,
+            "state": "Kerala 676101",
+            "scharr": "06:58",
+            "day": 2,
+            "lat": 10.9177088,
+            "fullname": "TIRUR",
+            "schdep": "07:00",
+            "lng": 75.9217819
+        },
+        {
+            "route": 1,
+            "halt": 1,
+            "code": "TA",
+            "no": 17,
+            "distance": 635,
+            "state": "Kerala 676302",
+            "scharr": "07:09",
+            "day": 2,
+            "lat": 10.9780157,
+            "fullname": "TANUR",
+            "schdep": "07:10",
+            "lng": 75.8815116
+        },
+        {
+            "route": 1,
+            "halt": 1,
+            "code": "PGI",
+            "no": 18,
+            "distance": 644,
+            "state": "Kerala 676303",
+            "scharr": "07:19",
+            "day": 2,
+            "lat": 11.0458232,
+            "fullname": "PARPANANGADI",
+            "schdep": "07:20",
+            "lng": 75.86093
+        },
+        {
+            "route": 1,
+            "halt": 1,
+            "code": "FK",
+            "no": 19,
+            "distance": 659,
+            "state": "Kerala 673631",
+            "scharr": "07:39",
+            "day": 2,
+            "lat": 11.1749322,
+            "fullname": "FEROK",
+            "schdep": "07:40",
+            "lng": 75.83024449999999
+        },
+        {
+            "route": 1,
+            "halt": 5,
+            "code": "CLT",
+            "no": 20,
+            "distance": 668,
+            "state": "Kerala 673001",
+            "scharr": "08:00",
+            "day": 2,
+            "lat": 11.2466631,
+            "fullname": "KOZHIKKODE",
+            "schdep": "08:05",
+            "lng": 75.78107349999999
+        },
+        {
+            "route": 1,
+            "halt": 1,
+            "code": "QLD",
+            "no": 21,
+            "distance": 693,
+            "state": "Kerala 673305",
+            "scharr": "08:29",
+            "day": 2,
+            "lat": 11.4461307,
+            "fullname": "QUILANDI",
+            "schdep": "08:30",
+            "lng": 75.693805
+        },
+        {
+            "route": 1,
+            "halt": 2,
+            "code": "BDJ",
+            "no": 22,
+            "distance": 715,
+            "state": "Kerala 673102",
+            "scharr": "08:43",
+            "day": 2,
+            "lat": 11.6388696,
+            "fullname": "VADAKARA",
+            "schdep": "08:45",
+            "lng": 75.5739162
+        },
+        {
+            "route": 1,
+            "halt": 1,
+            "code": "MAHE",
+            "no": 23,
+            "distance": 728,
+            "state": "Kerala 673310",
+            "scharr": "08:54",
+            "day": 2,
+            "lat": 11.6988219,
+            "fullname": "MAHE",
+            "schdep": "08:55",
+            "lng": 75.5466845
+        },
+        {
+            "route": 1,
+            "halt": 2,
+            "code": "TLY",
+            "no": 24,
+            "distance": 737,
+            "state": "Kerala 670101",
+            "scharr": "09:08",
+            "day": 2,
+            "lat": 11.753359,
+            "fullname": "TELLICHERRY",
+            "schdep": "09:10",
+            "lng": 75.49291
+        },
+        {
+            "route": 1,
+            "halt": 5,
+            "code": "CAN",
+            "no": 25,
+            "distance": 758,
+            "state": "Kerala 670001",
+            "scharr": "09:40",
+            "day": 2,
+            "lat": 11.8715225,
+            "fullname": "KANNUR",
+            "schdep": "09:45",
+            "lng": 75.3682525
+        },
+        {
+            "route": 1,
+            "halt": 1,
+            "code": "PAZ",
+            "no": 26,
+            "distance": 780,
+            "state": "Kerala 670303",
+            "scharr": "10:04",
+            "day": 2,
+            "lat": 12.0217159,
+            "fullname": "PAYANGADI",
+            "schdep": "10:05",
+            "lng": 75.260119
+        },
+        {
+            "route": 1,
+            "halt": 2,
+            "code": "PAY",
+            "no": 27,
+            "distance": 791,
+            "state": "Kerala 670307",
+            "scharr": "10:13",
+            "day": 2,
+            "lat": 12.0911582,
+            "fullname": "PAYYANUR",
+            "schdep": "10:15",
+            "lng": 75.1953023
+        },
+        {
+            "route": 1,
+            "halt": 1,
+            "code": "CHV",
+            "no": 28,
+            "distance": 806,
+            "state": "Kerala 671312",
+            "scharr": "10:29",
+            "day": 2,
+            "lat": 12.2144978,
+            "fullname": "CHARVATTUR",
+            "schdep": "10:30",
+            "lng": 75.15449869999999
+        },
+        {
+            "route": 1,
+            "halt": 2,
+            "code": "KZE",
+            "no": 29,
+            "distance": 820,
+            "state": "Kerala 671531",
+            "scharr": "10:43",
+            "day": 2,
+            "lat": 12.3200877,
+            "fullname": "KANHANGAD",
+            "schdep": "10:45",
+            "lng": 75.08474939999999
+        },
+        {
+            "route": 1,
+            "halt": 2,
+            "code": "KGQ",
+            "no": 30,
+            "distance": 843,
+            "state": "Kerala 671121",
+            "scharr": "11:03",
+            "day": 2,
+            "lat": 12.4913231,
+            "fullname": "KASARAGOD",
+            "schdep": "11:05",
+            "lng": 74.98769159999999
+        },
+        {
+            "route": 1,
+            "halt": 0,
+            "code": "MAQ",
+            "no": 31,
+            "distance": 889,
+            "state": "Karnataka 575001",
+            "scharr": "12:25",
+            "day": 2,
+            "lat": 12.8615873,
+            "fullname": "MANGALORE",
             "schdep": "Destination",
-            "scharr": "15:20"
+            "lng": 74.8435295
         }
-    ],
-    "train": {
-        "number": "12046",
-        "name": "CDG NDLS SHTBDI",
-        "days": [
-            {
-                "day-code": "SUN",
-                "runs": "N"
-            },
-            {
-                "day-code": "MON",
-                "runs": "Y"
-            },
-            {
-                "day-code": "TUE",
-                "runs": "Y"
-            },
-            {
-                "day-code": "WED",
-                "runs": "Y"
-            },
-            {
-                "day-code": "THU",
-                "runs": "Y"
-            },
-            {
-                "day-code": "FRI",
-                "runs": "Y"
-            },
-            {
-                "day-code": "SAT",
-                "runs": "Y"
-            }
-        ],
-        "classes": [
-            {
-                "available": "N",
-                "class-code": "3A"
-            },
-            {
-                "available": "Y",
-                "class-code": "CC"
-            },
-            {
-                "available": "N",
-                "class-code": "SL"
-            },
-            {
-                "available": "N",
-                "class-code": "2S"
-            },
-            {
-                "available": "N",
-                "class-code": "3E"
-            },
-            {
-                "available": "N",
-                "class-code": "2A"
-            },
-            {
-                "available": "Y",
-                "class-code": "1A"
-            },
-            {
-                "available": "N",
-                "class-code": "FC"
-            }
-        ]
-    }
+    ]
 }

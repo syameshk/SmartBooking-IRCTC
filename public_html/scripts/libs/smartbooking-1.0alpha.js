@@ -15,15 +15,24 @@ if ("undefined" === typeof jQuery)
         var SB = {};
         var name = "Smart Booking";
         var users;
-
+        var apikey = "Xeugvo5917";
         var tempRouteResult;
         $.getJSON("data/temp/routes.json", function (json) {
             tempRouteResult = json;
             console.log(tempRouteResult);
         });
-        function findValidRoutes(data,info) {
+        function findIndex(arr, propName, propValue) {
+            for (var i = 0; i < arr.length; i++)
+                if (arr[i][propName] == propValue)
+                    return i;
+        }
+        function findValidRoutes(data, info) {
+            var startIndex = findIndex(data,"code",info.travelfrom);
+            var endIndex = findIndex(data,"code",info.travelto);
+            console.log(startIndex +" "+ endIndex);
             console.log(data);
-        };
+        }
+        ;
 
         SB.greet = function () {
             console.log("Hello from the " + name + " library.");
@@ -32,7 +41,7 @@ if ("undefined" === typeof jQuery)
             console.log(info);
             $.ajax({type: "GET",
                 crossOrigin: true,
-                url: "http://api.railwayapi.com/route/train/12555/apikey/vkrev5917/",
+                url: "http://api.railwayapi.com/route/train/"+info.trainno+"/apikey/"+apikey+"/",
                 success: function (result) {
                     console.log(result);
                     result = tempRouteResult;
@@ -40,7 +49,7 @@ if ("undefined" === typeof jQuery)
                     if (result.error) {
                         throw new Error("Invalid response from the server");
                     } else {
-                        var routes = findValidRoutes(result.route,info);
+                        var routes = findValidRoutes(result.route, info);
                         //loop through and find availability
                     }
                 }});
