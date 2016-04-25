@@ -20,6 +20,7 @@ and open the template in the editor.
 
     </head>
     <body>
+        <script type="text/javascript" src="scripts/main.js"></script>
         <div class="container">
             <div class="row">
                 <div class="col-xs-8 col-md-12 col-centered">
@@ -32,26 +33,26 @@ and open the template in the editor.
                     <form>
                         <div class="form-group">
                             <label for="trainnumber">Train Number</label>
-                            <input type="number" class="form-control" placeholder="Train number">
+                            <input type="number" id="trainnumber" class="form-control" placeholder="Train number" min="0" required >
                         </div>
                         <div class="form-group">
                             <label for="travelfrom">Travel From</label>
-                            <input type="text" class="form-control" placeholder="Traveling from">
+                            <input type="text" id="travelfrom" class="form-control" placeholder="Traveling from" required >
                         </div>
                         <div class="form-group">
                             <label for="travelto">Travel To</label>
-                            <input type="text" class="form-control" placeholder="Traveling to">
+                            <input type="text" id="travelto" class="form-control" placeholder="Traveling to" required >
                         </div>
                         <div class="form-group">
                             <label for="traveldate">Travel To</label>
-                            <input type="text" class="form-control" placeholder="Traveling date">
+                            <input type="date" id="traveldate" class="form-control" placeholder="Traveling date" required >
                         </div>
                         <div class="checkbox">
                             <label for="rac">
-                                <input type="checkbox"> Consider RAC Tickets
+                                <input type="checkbox" id="includerac"> Consider RAC Tickets
                             </label>
                         </div>
-                        <button type="submit" class="btn btn-default">Submit</button>
+                        <button type="submit" class="btn btn-default" id="search_submit">Submit</button>
                     </form>
                 </div>
                 <div class="col-xs-8 col-md-6">
