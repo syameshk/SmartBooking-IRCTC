@@ -1,3 +1,30 @@
-{
-    "name": "TCS"
-}
+[
+    {
+        "lat": 26.8465108,
+        "fullname": "Lucknow Nr",
+        "code": "LKO",
+        "lng": 80.9466832,
+        "state": "Uttar Pradesh"
+    },
+    {
+        "lat": 26.8465108,
+        "fullname": "Lucknow Ne",
+        "code": "LJN",
+        "lng": 80.9466832,
+        "state": "Uttar Pradesh"
+    },
+    {
+        "lat": 26.7993186,
+        "fullname": "Bargawan",
+        "code": "BRGW",
+        "lng": 80.8972673,
+        "state": "Uttar Pradesh"
+    },
+    {
+        "lat": 26.8700844,
+        "fullname": "Badshahnagar",
+        "code": "BNZ",
+        "lng": 80.9591296,
+        "state": "Uttar Pradesh"
+    }
+]

@@ -1,3 +1,82 @@
-{
-    "name": "TCS"
-}
+[
+    {
+        "no": 1,
+        "name": "RAPTI SAGAR EXP",
+        "number": "12511",
+        "src_departure_time": "06:35",
+        "dest_arrival_time": "03:50",
+        "travel_time": "21:15",
+        "from": {
+            "name": "GORAKHPUR JN",
+            "code": "GKP"
+        },
+        "to": {
+            "name": "NAGPUR",
+            "code": "NGP"
+        },
+        "classes": [
+            {
+                "class-code": "FC",
+                "available": "N"
+            },
+            {
+                "class-code": "3E",
+                "available": "N"
+            },
+            {
+                "class-code": "CC",
+                "available": "N"
+            },
+            {
+                "class-code": "SL",
+                "available": "Y"
+            },
+            {
+                "class-code": "2S",
+                "available": "N"
+            },
+            {
+                "class-code": "2A",
+                "available": "Y"
+            },
+            {
+                "class-code": "3A",
+                "available": "Y"
+            },
+            {
+                "class-code": "1A",
+                "available": "N"
+            }
+        ],
+        "days": [
+            {
+                "day-code": "MON",
+                "runs": "N"
+            },
+            {
+                "day-code": "TUE",
+                "runs": "N"
+            },
+            {
+                "day-code": "WED",
+                "runs": "N"
+            },
+            {
+                "day-code": "THU",
+                "runs": "Y"
+            },
+            {
+                "day-code": "FRI",
+                "runs": "Y"
+            },
+            {
+                "day-code": "SAT",
+                "runs": "N"
+            },
+            {
+                "day-code": "SUN",
+                "runs": "Y"
+            }
+        ]
+    }
+]

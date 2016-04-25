@@ -1,0 +1,115 @@
+{
+    "response_code": 200,
+    "route": [
+        {
+            "no": 1,
+            "distance": 0,
+            "day": 1,
+            "halt": 0,
+            "route": 1,
+            "code": "CDG",
+            "fullname": "CHANDIGARH",
+            "lat": 30.7333148,
+            "lng": 76.7794179,
+            "state": "Chandigarh",
+            "scharr": "Source",
+            "schdep": "12:00"
+        },
+        {
+            "no": 2,
+            "distance": 68,
+            "day": 1,
+            "halt": 2,
+            "route": 1,
+            "code": "UMB",
+            "fullname": "AMBALA CANT JN",
+            "lat": 30.3781788,
+            "lng": 76.7766974,
+            "state": "Haryana",
+            "schdep": "12:42",
+            "scharr": "12:40"
+        },
+        {
+            "no": 3,
+            "distance": 266,
+            "day": 1,
+            "halt": 0,
+            "route": 1,
+            "code": "NDLS",
+            "fullname": "NEW DELHI",
+            "lat": 28.6139,
+            "lng": 77.2089,
+            "state": "Delhi",
+            "schdep": "Destination",
+            "scharr": "15:20"
+        }
+    ],
+    "train": {
+        "number": "12046",
+        "name": "CDG NDLS SHTBDI",
+        "days": [
+            {
+                "day-code": "SUN",
+                "runs": "N"
+            },
+            {
+                "day-code": "MON",
+                "runs": "Y"
+            },
+            {
+                "day-code": "TUE",
+                "runs": "Y"
+            },
+            {
+                "day-code": "WED",
+                "runs": "Y"
+            },
+            {
+                "day-code": "THU",
+                "runs": "Y"
+            },
+            {
+                "day-code": "FRI",
+                "runs": "Y"
+            },
+            {
+                "day-code": "SAT",
+                "runs": "Y"
+            }
+        ],
+        "classes": [
+            {
+                "available": "N",
+                "class-code": "3A"
+            },
+            {
+                "available": "Y",
+                "class-code": "CC"
+            },
+            {
+                "available": "N",
+                "class-code": "SL"
+            },
+            {
+                "available": "N",
+                "class-code": "2S"
+            },
+            {
+                "available": "N",
+                "class-code": "3E"
+            },
+            {
+                "available": "N",
+                "class-code": "2A"
+            },
+            {
+                "available": "Y",
+                "class-code": "1A"
+            },
+            {
+                "available": "N",
+                "class-code": "FC"
+            }
+        ]
+    }
+}

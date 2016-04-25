@@ -5,7 +5,7 @@
  */
 
 $(document).ready(function () {
-    
+
     //Get the user data
     var users;
     $.getJSON("data/users.json", function (json) {
@@ -21,27 +21,35 @@ $(document).ready(function () {
     $.getJSON("data/trains.json", function (json) {
         trains = json;
     });
-    
-    
+
+    var route
+
+    var result = [];
+
+
     $("#search_submit").click(function (e) {
         e.preventDefault();
-        
-        var apikey = users[0].userkey;
-        var trainno = $("#trainnumber").val();;
-        var travelfrom = $("#travelfrom").val();
-        var travelto = $("#travelto").val();
-        var traveldate = $("#traveldate").val();
-        var includerac = $("#includerac").val();
-        
-        console.log(apikey);console.log(trainno);console.log(travelfrom);console.log(travelto);console.log(traveldate);console.log(includerac);
-        
-        var url = "http://api.railwayapi.com/route/train/"+trainno+"/apikey/"+apikey+"/"
-        console.log(url);
-        $.ajax({type: "GET",
-            crossOrigin: true,
-            url: "http://api.railwayapi.com/route/train/12555/apikey/vkrev5917/",
-            success: function (result) {
-                console.log(result);
-            }});
+        var travelInfo = {trainno:$("#trainnumber").val(),travelfrom: $("#travelfrom").val(),travelto: $("#travelto").val(),traveldate: $("#traveldate").val(),includerac: $("#includerac").is(':checked'), class:"Sleeper(SL)"};
+        SB.getRoute(travelInfo,route_callback);
     });
+
+    function route_callback(data) {
+        if(data.error){
+            console.log("Something went wrong!");
+            console.log(data.error);
+        }else{
+            console.log("Train route fetched, please wait while we find availability!");
+            console.log("This might take some time!");
+        }
+    }
+    
+    function availability_callback(data,percentage) {
+        //Add data to available array
+        //Add to table
+        console.log("Finding availability, Complition status :"+percentage);
+    }
+    
+    function availability_fail(data) {
+        console.log(data);
+    }
 });
