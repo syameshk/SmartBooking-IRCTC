@@ -28,6 +28,7 @@ $(document).ready(function () {
 
 
     $("#search_submit").click(function (e) {
+        var SB = new SmartBooking()
         e.preventDefault();
         var travelInfo = {trainno:$("#trainnumber").val(),travelfrom: $("#travelfrom").val(),travelto: $("#travelto").val(),traveldate: $("#traveldate").val(),includerac: $("#includerac").is(':checked'), class:"Sleeper(SL)"};
         SB.getRoute(travelInfo,route_callback);
@@ -52,4 +53,5 @@ $(document).ready(function () {
     function availability_fail(data) {
         console.log(data);
     }
+    
 });
