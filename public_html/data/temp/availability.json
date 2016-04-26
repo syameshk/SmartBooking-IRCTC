@@ -1,48 +1,48 @@
 {
     "response_code": 200, 
-    "train_number": "12001", 
-    "train_name": "NDLS SHATABDI E",
+    "train_number": "12601", 
+    "train_name": "MANGALORE MAIL",
     "failure_rate": 31.346153846153847,
     "error": false, 
     "from": {
-        "lat": 23.2599333, 
-        "name": "BHOPAL  JN", 
-        "lng": 77.412615, 
-        "code": "BPL"
+        "lat": 13.0820617, 
+        "name": "CHENNAI CENTRAL", 
+        "lng": 80.2755868, 
+        "code": "MAS"
     }, 
     "class": {
-        "class_name": "AC CHAIR CAR", 
-        "class_code": "CC"
+        "class_name": "SLEEPER", 
+        "class_code": "SL"
     }, 
     "to": {
-        "lat": 30.6016778, 
-        "name": "NEW DELHI", 
-        "lng": -98.3488272, 
-        "code": "NDLS"
+        "lat": 11.2466631,
+        "name": "KOZHIKODE", 
+        "lng": 75.78107349999999, 
+        "code": "CLT"
     }, 
     "availability": [
         {
-            "date": "14-10-2014", 
+            "date": "12-05-2014", 
             "status": "AVAILABLE 364"
         }, 
         {
-            "date": "15-10-2014", 
+            "date": "13-05-2014", 
             "status": "AVAILABLE 361"
         }, 
         {
-            "date": "16-10-2014", 
+            "date": "14-05-2014", 
             "status": "AVAILABLE 284"
         }, 
         {
-            "date": "17-10-2014", 
+            "date": "15-05-2014", 
             "status": "AVAILABLE 351"
         }, 
         {
-            "date": "18-10-2014", 
+            "date": "16-05-2014", 
             "status": "AVAILABLE 303"
         }, 
         {
-            "date": "19-10-2014", 
+            "date": "17-05-2014", 
             "status": "AVAILABLE 329"
         }
     ], 

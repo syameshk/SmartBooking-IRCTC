@@ -22,7 +22,7 @@ $(document).ready(function () {
 
 
     $("#search_submit").click(function (e) {
-        var SB = new SmartBooking()
+        var SB = new SmartBooking(default_callback, route_callback, availability_callback, availability_fail);
         e.preventDefault();
         
         // Convert date
@@ -33,6 +33,10 @@ $(document).ready(function () {
         var travelInfo = {trainno:$("#trainnumber").val(),travelfrom: $("#travelfrom").val(),travelto: $("#travelto").val(),traveldate: dateString,includerac: $("#includerac").is(':checked'), class:"SL", quota:"GN"};
         SB.getRoute(travelInfo,route_callback);
     });
+    
+    function default_callback(data) {
+        console.log(data);
+    }
 
     function route_callback(data) {
         if(data.error){
@@ -40,6 +44,7 @@ $(document).ready(function () {
             console.log(data.error);
         }else{
             console.log("Train route fetched, please wait while we find availability!");
+            console.log("found alternative routes "+data.length);
             console.log("This might take some time!");
         }
     }
@@ -47,11 +52,16 @@ $(document).ready(function () {
     function availability_callback(data,percentage) {
         //Add data to available array
         //Add to table
-        console.log("Finding availability, Complition status :"+percentage);
+        //console.log("Finding availability, Complition status :"+percentage);
+        //We need only confirm tickets, do filter here, and display
+        var distanceCovered = (data.distance/data.totalDistance) * 100;
+        var row = '<tr><td>'+data.train_number+""+'</td><td>'+data.from+'</td><td>'+data.to+'</td><td>'+data.distance+'</td><td>'+distanceCovered+'</td><td>'+data.availability+'</td></tr>';
+        //console.log(data);
+        $('#avail_list tr:last').after(row);
     }
     
-    function availability_fail(data) {
-        console.log(data);
+    function availability_fail(data,percentage) {
+        console.log("Finding availability faild, Failed status :"+percentage);
     }
     
 });
