@@ -14,8 +14,9 @@ SmartBooking = function () {
     var apikey = "Xeugvo5917";
     var tempRouteResult;
     var tempAvailability;
-    var step = 3;
+    var step = 1;
     var validRoutes = [];
+    var availability = [];
 
     $.getJSON("data/temp/routes.json", function (json) {
         tempRouteResult = json;
@@ -25,7 +26,7 @@ SmartBooking = function () {
         tempAvailability = json;
     });
 
-    $.getJSON("data/users.json", function (json) {
+    $.getJSON("data/private/users.json", function (json) {
         users = json;
     });
 
@@ -46,38 +47,38 @@ SmartBooking = function () {
             if (arr[i][propName] == propValue)
                 return i;
     }
-    function findValidRoutes(data, info) {
-        var startIndex = findIndex(data, "code", info.travelfrom);
-        var endIndex = findIndex(data, "code", info.travelto);
-        validRoutes = [];
-        console.log(startIndex + " to " + endIndex+" of"+data.length);
+    
+    function findValidRoutes(routes, info) {
+        // Starting station index from route date
+        var startIndex = findIndex(routes, "code", info.travelfrom);
+        // Destination station index from route date
+        var endIndex = findIndex(routes, "code", info.travelto);
+        // Array to store, valid routes
+        var foundRoutes = [];
+        console.log(startIndex + " to " + endIndex+" of"+routes.length);
+        
+        // Check and find all valid routes
         //validRoutes.push({source:"CODE",dest:"CODE"});
         if (startIndex == "undefined" || endIndex == "undefined") {
             console.log("Not coudn't find the source/destination in the route!");
         } else {
             //Note: This part need to be improvised
             for (var i = 0; i < endIndex; i++) {
-                for (var j = startIndex + step + i; j < data.length; j++) {
-                    validRoutes.push({source: data[i].code, dest: data[j].code});
+                for (var j = startIndex + step + i; j < routes.length; j++) {
+                    foundRoutes.push({source: routes[i], dest: routes[j]});
                 }
             }
-//            
-//            
-//            for(var i = 0 ;i < startIndex ; i++){
-//                for(var j = startIndex+1+i;j<data.length;j++){
-//                    validRoutes.push({source:data[i].code,dest:data[j].code});
-//                }
-//            }
-//            for(var i = startIndex; i < endIndex; i++){
-//                for(var j = startIndex+1+i;j<data.length;j++){
-//                    validRoutes.push({source:data[i].code,dest:data[j].code});
-//                }
-//            }
-            console.log(validRoutes);
-            return validRoutes;
+            console.log(foundRoutes);
+            return foundRoutes;
         }
     }
     
+    function findAllAvailability(info, routes){
+        for(var i=0;i<routes.length;i++){
+            var data = {trainno:info.trainno, date:info.traveldate, class:info.class, quota:info.quota, source:routes[i].source.code, dest:routes[i].dest.code};
+            findSeatAvailability(data,seatAvailabilitySuccess,seatAvailabilityFail);
+        }
+    } 
     
     
     // This method will check the availability, and gives a result
@@ -92,6 +93,7 @@ SmartBooking = function () {
             success: function (result) {
                 console.log(result);
                 if (result.error) {
+                    successcallback(tempAvailability);
                     errorcallback(data);
                 } else {
                     successcallback(result);
@@ -115,8 +117,10 @@ SmartBooking = function () {
                 if (result.error) {
                     throw new Error("Invalid response from the server");
                 } else {
-                    var routes = findValidRoutes(result.route, info);
-                    //loop through and find availability
+                    validRoutes = findValidRoutes(result.route, info);
+                    if(validRoutes != "undefined"){
+                        findAllAvailability(info,validRoutes);
+                    }
                 }
             }});
     };

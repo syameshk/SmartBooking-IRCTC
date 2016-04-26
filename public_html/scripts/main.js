@@ -5,12 +5,6 @@
  */
 
 $(document).ready(function () {
-
-    //Get the user data
-    var users;
-    $.getJSON("data/users.json", function (json) {
-        users = json;
-    });
     //Get the station data
     var stations;
     $.getJSON("data/stations.json", function (json) {
@@ -30,7 +24,13 @@ $(document).ready(function () {
     $("#search_submit").click(function (e) {
         var SB = new SmartBooking()
         e.preventDefault();
-        var travelInfo = {trainno:$("#trainnumber").val(),travelfrom: $("#travelfrom").val(),travelto: $("#travelto").val(),traveldate: $("#traveldate").val(),includerac: $("#includerac").is(':checked'), class:"Sleeper(SL)"};
+        
+        // Convert date
+        var myDate = new Date($("#traveldate").val());
+        var dateString = (myDate.getMonth() + 1) + "-" + myDate.getDate() + "-" + myDate.getFullYear();
+        
+        console.log("date :"+dateString );
+        var travelInfo = {trainno:$("#trainnumber").val(),travelfrom: $("#travelfrom").val(),travelto: $("#travelto").val(),traveldate: dateString,includerac: $("#includerac").is(':checked'), class:"SL", quota:"GN"};
         SB.getRoute(travelInfo,route_callback);
     });
 
