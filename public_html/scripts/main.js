@@ -19,15 +19,17 @@ $(document).ready(function () {
     var route
 
     var result = [];
-
+    
+    var SB = new SmartBooking(default_callback, route_callback, availability_callback, availability_fail);
 
     $("#search_submit").click(function (e) {
-        var SB = new SmartBooking(default_callback, route_callback, availability_callback, availability_fail);
+        
         e.preventDefault();
         
         // Convert date
         var myDate = new Date($("#traveldate").val());
-        var dateString = (myDate.getMonth() + 1) + "-" + myDate.getDate() + "-" + myDate.getFullYear();
+        //var dateString = (myDate.getMonth() + 1) + "-" + myDate.getDate() + "-" + myDate.getFullYear();
+        var dateString = myDate.getDate() + "-" + (myDate.getMonth() + 1) + "-" + myDate.getFullYear();
         
         console.log("date :"+dateString );
         var travelInfo = {trainno:$("#trainnumber").val(),travelfrom: $("#travelfrom").val(),travelto: $("#travelto").val(),traveldate: dateString,includerac: $("#includerac").is(':checked'), class:"SL", quota:"GN"};
@@ -61,7 +63,8 @@ $(document).ready(function () {
     }
     
     function availability_fail(data,percentage) {
-        console.log("Finding availability faild, Failed status :"+percentage);
+        console.log("Finding availability faild. Failure % "+percentage);
+        console.log(data);
     }
     
 });

@@ -40,7 +40,15 @@ SmartBooking = function (default_callback, route_callback, availability_callback
     });
 
     function apiKeySelector() {
-        return "Xeugvo5917";
+        var key = "Not Available";
+        for(var  i = 0 ;i<users.length;i++){
+            if(users[i].current_hit < users[i].max_hit ){
+                users[i].current_hit++;
+                key = users[i].userkey;
+                break;
+            }
+        }
+        return key;
     }
 
     function seatAvailabilitySuccess(data) {
@@ -119,7 +127,7 @@ SmartBooking = function (default_callback, route_callback, availability_callback
             success: function (result) {
                 //console.log(result);
                 if (result.error) {
-                    successcallback(tempAvailability);
+                    //successcallback(tempAvailability);
                     errorcallback(result);
                 } else {
                     successcallback(result);
@@ -149,10 +157,9 @@ SmartBooking = function (default_callback, route_callback, availability_callback
         console.log(info);
         $.ajax({type: "GET",
             crossOrigin: true,
-            url: "http://api.railwayapi.com/route/train/" + info.trainno + "/apikey/" + apikey + "/",
+            url: "http://api.railwayapi.com/route/train/" + info.trainno + "/apikey/" + apiKeySelector() + "/",
             success: function (result) {
                 console.log(result);
-                result = tempRouteResult;
                 callback(result);
                 if (result.error) {
                     throw new Error("Invalid response from the server");
@@ -167,76 +174,4 @@ SmartBooking = function (default_callback, route_callback, availability_callback
             }});
     };
 };
-
-
-//(function (window) {
-//    'use strict';
-//    function define_Library() {
-//
-//
-//
-//        var SB = {};
-//        var name = "Smart Booking";
-//        var users;
-//        var apikey = "Xeugvo5917";
-//        var tempRouteResult;
-//
-//
-//        $.getJSON("data/temp/routes.json", function (json) {
-//            tempRouteResult = json;
-//        });
-//
-//        $.getJSON("data/temp/users.json", function (json) {
-//            users = json;
-//        });
-//
-//        function findIndex(arr, propName, propValue) {
-//            for (var i = 0; i < arr.length; i++)
-//                if (arr[i][propName] == propValue)
-//                    return i;
-//        }
-//        function findValidRoutes(data, info) {
-//            var startIndex = findIndex(data, "code", info.travelfrom);
-//            var endIndex = findIndex(data, "code", info.travelto);
-//            console.log(startIndex + " " + endIndex);
-//            console.log(data);
-//        }
-//
-//
-//
-//
-//        function apiKeySelector() {
-//            return "Xeugvo5917";
-//        }
-//
-//        SB.greet = function () {
-//            console.log("Hello from the " + name + " library.");
-//        };
-//        SB.getRoute = function (info, callback) {
-//            console.log(info);
-//            $.ajax({type: "GET",
-//                crossOrigin: true,
-//                url: "http://api.railwayapi.com/route/train/" + info.trainno + "/apikey/" + apikey + "/",
-//                success: function (result) {
-//                    console.log(result);
-//                    result = tempRouteResult;
-//                    callback(result);
-//                    if (result.error) {
-//                        throw new Error("Invalid response from the server");
-//                    } else {
-//                        var routes = findValidRoutes(result.route, info);
-//                        //loop through and find availability
-//                    }
-//                }});
-//        };
-//        return SB;
-//    }
-//    //define globally if it doesn't already exist
-//    if (typeof (SB) === 'undefined') {
-//        window.SB = define_Library();
-//    }
-//    else {
-//        console.log("Library already defined.");
-//    }
-//})(window);
 
